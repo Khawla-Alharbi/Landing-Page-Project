@@ -84,7 +84,6 @@ function activeClass(){
         if((secRect.top<(window.innerHeight/2)) && (secRect.top>0)){ 
             activeNow.classList.remove('your-active-class');
             sec.classList.add('your-active-class');
-            console.log('appear');
             //if this section in the viewport break the loop to reduce the loop time and increase performance 
             break;
         }
