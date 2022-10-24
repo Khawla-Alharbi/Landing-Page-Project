@@ -3,7 +3,9 @@ This project is all about how to manipulate the DOM
 
 # Table of contents
 
-[starter code](#Starter code)
+[Starter code](#starter-code)
+
+[What to Build?](#what-to-build)
 
 ## Starter Code
 The starter code: [here](https://github.com/udacity/fend/tree/refresh-2019/projects/landing-page)
