@@ -16,5 +16,6 @@ The starter code provided by Udacity: [here](https://github.com/udacity/fend/tre
 - Determine the section that actively being viewed in the window
 - Highlight the section that actively being viewed by adding a class with specific css style
 
-Khawla Alharbi
+
+by Khawla Alharbi
 
