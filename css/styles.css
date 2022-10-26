@@ -89,6 +89,10 @@ section {
     transition: ease 0.3s all;
 }
 
+.activemenue {
+    background: rgb(151, 150, 150);
+}
+
 /* Header Styles */
 .page__header {
     background: #fff;
