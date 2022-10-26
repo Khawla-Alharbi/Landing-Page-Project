@@ -42,6 +42,7 @@
 function buildNav(){
     const myfragment = document.createDocumentFragment()
     const sections = document.getElementsByTagName('section');
+    let first=true;
     //This loop to iterate over all elements that have section tag in the html file
     for (const sec of sections){
 
@@ -54,11 +55,9 @@ function buildNav(){
         
         //Here create an anchor element and add EventListener to it
         const linkNode = document.createElement("a");
-        linkNode.setAttribute('href','#'+secId);
         linkNode.innerText= secNumber;
         linkNode.setAttribute('class','menu__link');
         linkNode.addEventListener('click',function(){
-            const activeNow= document.querySelector('.your-active-class');
             event.preventDefault();
             myscroll(secId)});
 
@@ -75,17 +74,23 @@ function activeClass(){
 
     const sections = document.getElementsByTagName('section');	
     const activeNow= document.querySelector('.your-active-class');
-
+    const activenav= document.getElementsByClassName('activemenue');
+    const liItems= document.querySelectorAll('li');
     //for loop to check which section is in the viewport now
     for(let i=0; i<sections.length; i++){
          const sec= sections[i];
          const secRect = sec.getBoundingClientRect();
-        
-        if((secRect.top<(window.innerHeight/2)) && (secRect.top>0)){ 
+  
+        if(secRect.top <= 150 && secRect.top >= -370){ 
+            
+            if(activenav.length>0){
+                activenav[0].classList.remove('activemenue');
+            }
+            
             activeNow.classList.remove('your-active-class');
+            const liItems = document.getElementById("navbar__list").querySelectorAll('li');
+			liItems[i].className += "  activemenue";
             sec.classList.add('your-active-class');
-            //if this section in the viewport break the loop to reduce the loop time and increase performance 
-            break;
         }
 
     }
@@ -97,7 +102,7 @@ function activeClass(){
 function myscroll(secId){
     //get section position to scroll into it
     const secpos = document.getElementById(secId).offsetTop;
-    
+
     window.scrollTo({
         behavior:'smooth',
         top:secpos,
