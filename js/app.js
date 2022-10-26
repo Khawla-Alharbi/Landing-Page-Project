@@ -94,8 +94,6 @@ function activeClass(){
         }
 
     }
-    
-
 }
 
 // Scroll to anchor ID using scrollTO event
